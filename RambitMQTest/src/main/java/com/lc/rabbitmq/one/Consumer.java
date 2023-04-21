@@ -1,11 +1,13 @@
 package com.lc.rabbitmq.one;
 
+import com.lc.rabbitmq.utils.RabbitMQConnectionFactory;
 import com.rabbitmq.client.*;
 
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.concurrent.TimeoutException;
+
+import static com.lc.rabbitmq.utils.Constant.QUEUE_NAME;
 
 /**
  * @Author Lc
@@ -14,8 +16,7 @@ import java.util.concurrent.TimeoutException;
  * 消费者 接收消息
  */
 public class Consumer {
-    //队列名称
-    public static final String QUEUE_NAME = "hello";
+
     //接收消息
     public static void main(String[] args) throws IOException, TimeoutException {
         Channel channel = RabbitMQConnectionFactory.getConnection();
