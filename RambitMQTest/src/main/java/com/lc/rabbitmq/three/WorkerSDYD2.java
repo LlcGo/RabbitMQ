@@ -37,7 +37,10 @@ public class WorkerSDYD2 {
         CancelCallback cancelCallback = (consumerTag) ->{
             System.out.println(consumerTag+ "消费者2取消接口回调逻辑");
         };
-
+        //不公平分发
+//        channel.basicQos(1);
+        //预取值为5
+        channel.basicQos(5);
         channel.basicConsume(QUEUE_NAME,AutoAck,deliverCallback,cancelCallback);
     }
 }
