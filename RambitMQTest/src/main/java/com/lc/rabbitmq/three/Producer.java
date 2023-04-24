@@ -19,7 +19,8 @@ import static com.lc.rabbitmq.utils.Constant.QUEUE_NAME;
 public class Producer {
     public static void main(String[] args) throws IOException {
         Channel channel = RabbitMQConnectionFactory.getConnection();
-
+        //开启发布确认
+        channel.confirmSelect();
         //队列持久化
         boolean durable = true;
         //创建队列
