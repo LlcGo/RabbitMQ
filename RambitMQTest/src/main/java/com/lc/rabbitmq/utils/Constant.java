@@ -9,5 +9,8 @@ public interface Constant {
     String DIR_NAME = "direct_logs";
     //topic
     String TOPIC_NAME = "topic_logs";
-
+    //dead
+    String DEAD_LINE = "dead_line";
+    //deadqueen
+    String DEAD_QUEUE = "normal";
 }
